@@ -1,4 +1,6 @@
 class TodoListActions
+  require 'NewToDoItem'
+
   attr_reader :todo_list
 
   def initialize
