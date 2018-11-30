@@ -12,6 +12,4 @@ class NewToDoItem
       completed: @completed
     }
   end
-
-
 end
