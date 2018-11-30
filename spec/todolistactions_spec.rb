@@ -7,9 +7,4 @@ RSpec.describe TodoListActions do
     todos = TodoListActions.new
     expect(todos.todo_list).to eq([])
   end
-
-  it "creates an instance of NewToDoItem" do
-    new_todo = TodoListActions.new
-    expect(new_todo.new_todo("wash clothes")).to eq({todo: "wash clothes", completed: false})
-  end
 end
