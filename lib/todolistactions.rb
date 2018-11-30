@@ -14,4 +14,8 @@ class TodoListActions
     todo_list << new_entry
   end
 
+  def edit_todo(index, change_to)
+    todo_list[index][:todo] = change_to
+  end
+
 end
