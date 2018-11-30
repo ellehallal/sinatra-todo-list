@@ -23,31 +23,27 @@ class TodoListActions
   end
 
   def show_all_todos
-    todo_list.each do |todo_entry|
-      todo_entry.each do |todo, completed|
-        puts todo
-      end
-    end
+    @todo_list
   end
 
   def show_completed_todos
+    completed_todos = []
     todo_list.each do |todo_entry|
-      todo_entry.each do |todo, completed|
-        if todo_entry[:completed] = true
-          puts todo
-        end
+      if todo_entry[:completed] = true
+        completed_todos << todo_entry
       end
     end
+    completed_todos
   end
 
   def show_incomplete_todos
+    incomplete_todos = []
     todo_list.each do |todo_entry|
-      todo_entry.each do |todo, completed|
-        if todo_entry[:completed] = false
-          puts todo
-        end
+      if todo_entry[:completed] = false
+        incomplete_todos << todo_entry
       end
     end
+    incomplete_todos
   end
 
 end
