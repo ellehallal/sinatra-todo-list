@@ -46,4 +46,10 @@ class TodoListActions
     incomplete_todos
   end
 
+  def toggle_all_completed_todos
+    todo_list.each do |todo_entry|
+      todo_entry[:completed] = false
+    end
+  end
+
 end
