@@ -29,7 +29,7 @@ class TodoListActions
   def show_completed_todos
     completed_todos = []
     todo_list.each do |todo_entry|
-      if todo_entry[:completed] = true
+      if todo_entry[:completed] == true
         completed_todos << todo_entry
       end
     end
