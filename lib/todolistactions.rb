@@ -18,4 +18,8 @@ class TodoListActions
     todo_list[index][:todo] = change_to
   end
 
+  def mark_as_complete(index)
+    todo_list[index][:completed] = true  
+  end
+
 end
