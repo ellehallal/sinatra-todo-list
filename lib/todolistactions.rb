@@ -3,6 +3,8 @@ class TodoListActions
 
   def initialize
     @todo_list =[]
+    @completed_todos = []
+    @incomplete_todos =[]
   end
 
   def new_todo(todo)
@@ -27,23 +29,21 @@ class TodoListActions
   end
 
   def show_completed_todos
-    completed_todos = []
     todo_list.each do |todo_entry|
       if todo_entry[:completed] == true
-        completed_todos << todo_entry
+        @completed_todos << todo_entry
       end
     end
-    completed_todos
+    @completed_todos
   end
 
   def show_incomplete_todos
-    incomplete_todos = []
     todo_list.each do |todo_entry|
       if todo_entry[:completed] == false
-        incomplete_todos << todo_entry
+        @incomplete_todos << todo_entry
       end
     end
-    incomplete_todos
+    @incomplete_todos
   end
 
   def toggle_all_completed_todos
