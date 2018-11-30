@@ -44,4 +44,13 @@ RSpec.describe TodoListActions do
     new_todo.mark_as_complete(1)
     expect(new_todo.show_completed_todos).to eq([{todo: "buy milk", completed: true}])
   end
+
+  it "returns incomplete todos only" do
+    new_todo = TodoListActions.new
+    new_todo.new_todo("wash clothes")
+    new_todo.new_todo("buy milk")
+    new_todo.mark_as_complete(1)
+    expect(new_todo.show_incomplete_todos).to eq([{todo: "wash clothes", completed: false}])
+  end
+
 end

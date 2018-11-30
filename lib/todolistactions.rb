@@ -39,7 +39,7 @@ class TodoListActions
   def show_incomplete_todos
     incomplete_todos = []
     todo_list.each do |todo_entry|
-      if todo_entry[:completed] = false
+      if todo_entry[:completed] == false
         incomplete_todos << todo_entry
       end
     end
