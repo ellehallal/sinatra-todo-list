@@ -61,4 +61,12 @@ RSpec.describe TodoListActions do
     expect(new_todo.toggle_all_completed_todos).to eq([{todo: "wash clothes", completed: false}, {todo: "buy milk", completed: false}])
   end
 
+  it "toggles all incomplete todos to complete" do
+    new_todo = TodoListActions.new
+    new_todo.new_todo("wash clothes")
+    new_todo.new_todo("buy milk")
+    new_todo.mark_as_complete(1)
+    expect(new_todo.toggle_all_incomplete_todos).to eq([{todo: "wash clothes", completed: true}, {todo: "buy milk", completed: true}])
+  end
+
 end
